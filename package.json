@@ -1,1 +1,7 @@
-{"name":"akkini-tracker","private":true,"scripts":{"build":"cd client && npm install && npm run build && cd ../server && npm install","start":"cd server && npm start"}}
+{ "name": "akkini-tracker",
+  "private": true,
+  "scripts": {
+    "build": "cd client && npm install --include=dev && npm run build && cd ../server && npm install",
+    "start": "cd server && npm start"
+  }
+}
