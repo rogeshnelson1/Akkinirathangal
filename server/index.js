@@ -107,8 +107,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Server error, please try again" });
 });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/akkini")
-  .then(() => app.listen(process.env.PORT || 5000, () => console.log("Server running")))
+mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/akkini", { dbName: "akkini" })  .then(() => app.listen(process.env.PORT || 5000, () => console.log("Server running")))
   .catch((err) => { console.error("MongoDB connection failed:", err.message); process.exit(1); });
 
 process.on("unhandledRejection", (e) => console.error("Unhandled:", e));
